@@ -1,0 +1,16 @@
+# Note: pyarrow not supported in Python v3.12
+# https://stackoverflow.com/a/77318636
+FROM python:3.11-bookworm
+
+WORKDIR /usr/src/app
+
+RUN apt update
+RUN apt install -y build-essential swig
+
+COPY requirements.txt  ./
+RUN pip install -r requirements.txt
+
+COPY . .
+
+EXPOSE 8501
+CMD ["streamlit","run","1.basic-chat.py"]
