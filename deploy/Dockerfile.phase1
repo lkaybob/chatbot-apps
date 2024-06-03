@@ -1,5 +1,7 @@
-# Note: pyarrow not supported in Python v3.12
+# Note : pyarrow not supported in Python v3.12
 # https://stackoverflow.com/a/77318636
+# Note : faiss-cpu seems to be not supported in Alpine Linux
+# https://github.com/facebookresearch/faiss/issues/468
 FROM python:3.11-bookworm
 
 WORKDIR /usr/src/app
